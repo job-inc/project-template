@@ -19,7 +19,7 @@ interface PageProps extends React.HTMLAttributes<HTMLDivElement> {
 const toastOptions = {
     style: {
         background: 'transparent',
-        color: '#fff',
+        color: 'var(--text-primary)',
     },
 };
 

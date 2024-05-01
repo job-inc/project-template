@@ -22,6 +22,7 @@
     "concurrently": "^8.2.2",
     "easy-typed-intl": "^1.0.3",
     "next": "14.2.3",
+    "next-auth": "^4.24.7",
     "next-themes": "^0.3.0",
     "react": "^18",
     "react-dom": "^18",

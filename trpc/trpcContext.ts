@@ -1,8 +1,13 @@
 import { inferAsyncReturnType } from '@trpc/server';
 import * as trpcNext from '@trpc/server/adapters/next';
+import { getServerSession } from 'next-auth';
+
+import { authOptions } from '../src/utils/auth';
 
 export const createContext = async (opts: trpcNext.CreateNextContextOptions) => {
-    return { session: { authorized: true }, headers: opts.req.headers };
+    const session = await getServerSession(opts.req, opts.res, authOptions);
+
+    return { session, headers: opts.req.headers };
 };
 
 export type TrpcContext = inferAsyncReturnType<typeof createContext>;
