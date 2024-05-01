@@ -1,11 +1,14 @@
-html,
-body {
-  --text-primary: #fff;
-  --background: #000;
+:root {
   --font-size-m: 1rem;
   --font-display: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
     "Segoe UI", Ubuntu, "Arial", sans-serif;
+  
+  --transition-time: 300ms;
+  --transition-func: ease-in-out;
+}
 
+html,
+body {
   box-sizing: border-box;
 
   font-family: var(--font-display);
