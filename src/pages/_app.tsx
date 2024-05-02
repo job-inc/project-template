@@ -6,6 +6,7 @@ import { trpc } from '../../trpc/trpcClient';
 import { TLocale, setSSRLocale } from '../utils/getLang';
 
 import './_app.css';
+import '@taskany/bricks/harmony/style.css';
 
 const defaultThemes = ['light', 'dark'];
 

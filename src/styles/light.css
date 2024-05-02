@@ -1,4 +1,5 @@
-:root {
+@import '@taskany/colors/harmony/light.css';
+/* :root {
     --text-primary: #18181b;
     --text-secondary: #27272a;
 
@@ -71,4 +72,4 @@
     --danger-700: #920b3a;
     --danger-800: #610726;
     --danger-900: #310413;
-}
+} */

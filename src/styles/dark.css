@@ -1,4 +1,5 @@
-:root {
+@import '@taskany/colors/harmony/dark.css';
+/* :root {
     --text-primary: #FFFFFF;
     --text-secondary: #f4f4f5;
 
@@ -71,4 +72,4 @@
     --danger-700: #faa0bf;
     --danger-800: #fdd0df;
     --danger-900: #fee7ef;
-}
+} */
