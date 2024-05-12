@@ -1,40 +1,77 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Инициализация проекта
 
-## Getting Started
+## `.env` файл
 
-First, run the development server:
+1) Создать файл `.env`
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+После создания `.env` файла скопировать переменные из `.env.example`
+
+------
+```.env
+CREDENTIALS_AUTH=1
+EXTERNAL_API_SERVICE=https://external.service.ru
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+| Переменная | Значения | Описание |
+| - | -------- | --- |
+| CREDENTIALS_AUTH | 0 / 1 | ```0 - FALSE``` / ```1 - TRUE``` |
+| EXTERNAL_API_SERVICE | String | `URL` стороннего сервиса. Используется в примере для авторизации через NextAuth |
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+------
+ 
+ 
+ 
+## Команды
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+1) Клонирование репозитория
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```zsh
+git clone https://github.com/job-inc/project-template.git
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+2) Установка зависимостей
 
-## Learn More
+```zsh
+npm ci
+```
 
-To learn more about Next.js, take a look at the following resources:
+3) Установка `github hooks`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```zsh
+npm run prepare
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+4) Запуск проекта
 
-## Deploy on Vercel
+```zsh
+npm run dev
+```
+ 
+ 
+ 
+# Темизация
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1) Заполняются 2 файла
+- [dark.css](./src/styles/dark.css)
+- [light.css](./src/styles/light.css)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+------
+
+```css
+@import '@taskany/colors/harmony/dark.css';
+```
+
+```css
+:root {
+   --text-primary: #FFFFFF;
+   --text-secondary: #f4f4f5;
+}
+```
+
+------
+
+2) С помощью команды `build:css` `.css` файлы трансформируются в `.css` файлы в `public/themes/dark(light).css`
+
+> команда используется также в скриптах `npm run dev` / `npm run build`
+
+3) В компоненте [Page](./src/components/Page/Page.tsx#L35) подгружается необходимая тема
